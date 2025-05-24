@@ -1,0 +1,103 @@
+How To Install React 19 With Vite
+Fast Setup Tutorial for Beginners
+
+Fast Setup
+Beginner Friendly
+React 19
+Introduction
+React 19 is the latest stable version of the popular JavaScript library for building user interfaces. Vite is a modern build tool that offers blazing-fast development environment and optimized production builds. In this tutorial, we'll show you how to set up React 19 with Vite to create a fast, modern web application development environment.
+
+Why Use Vite?
+Lightning-fast hot module replacement
+No bundling during development
+Optimized builds with Rollup
+Out-of-the-box TypeScript support
+React 19 Features
+React Compiler for improved performance
+New server-side rendering architecture
+Enhanced concurrent features
+Improved developer experience
+Prerequisites
+Before getting started, make sure you have the following installed:
+
+Node.js - version 18.0.0 or higher (preferably version 20+)
+npm or yarn package manager
+A code editor (VS Code recommended)
+ Tip: To check your Node.js version, open your terminal and run:
+
+node -vCopy
+Step-by-Step Installation
+1
+Create a New Vite Project
+Open your terminal and run the following command:
+
+npm create vite@latest my-react-app -- --template reactCopy
+Replace my-react-app with your desired project name.
+
+2
+Navigate to Your Project Directory
+cd my-react-appCopy
+3
+Upgrade to React 19
+By default, Vite might create a project with React 18. Let's upgrade to React 19:
+
+npm install react@^19.0.0 react-dom@^19.0.0Copy
+ Note: The videos showed installing React 19 as it had just been released. In the future, Vite's React template might include React 19 by default.
+
+4
+Install React Compiler (Optional)
+To leverage the new React Compiler features in React 19, you can install the Babel plugin:
+
+npm install -D @babel/plugin-react-compilerCopy
+5
+Configure Vite to Use React Compiler
+Open the vite.config.js file in your project directory and modify it to include the React Compiler plugin:
+
+import { defineConfig } from 'vite'; import react from '@vitejs/plugin-react'; export default defineConfig({ plugins: [ react({ babel: { plugins: ['@babel/plugin-react-compiler'] } }) ], });Copy
+6
+Change Default Port (Optional)
+By default, Vite runs on port 5173. If you prefer the traditional React port 3000, modify your vite.config.js file:
+
+import { defineConfig } from 'vite'; import react from '@vitejs/plugin-react'; export default defineConfig({ plugins: [ react({ babel: { plugins: ['@babel/plugin-react-compiler'] } }) ], server: { port: 3000 }, });Copy
+7
+Install Dependencies and Start the Development Server
+Install all project dependencies and start the development server:
+
+npm installCopy
+npm run devCopy
+Your React 19 app should now be running on http://localhost:3000 (or port 5173 if you didn't change it).
+
+Verifying React 19 Installation
+To verify that your project is using React 19, you can display the React version in your app:
+
+// In your App.jsx file import React, { version } from 'react'; function App() { return (
+React 19 with Vite
+Current React Version: {version}
+); } export default App;Copy
+This will display the current React version in your app, confirming that React 19 is properly installed.
+
+Troubleshooting
+Package Version Conflicts
+If you encounter version conflicts, try clearing your npm cache and reinstalling:
+
+npm cache clean --forceCopy
+npm installCopy
+Compiler Plugin Issues
+If the React Compiler plugin causes issues, you can remove it and still use React 19 without the compiler features:
+
+Remove the plugin from your vite.config.js file
+Uninstall the package: npm uninstall @babel/plugin-react-compiler
+Next Steps
+Add Dependencies
+Consider adding these popular libraries to your React 19 project:
+
+React Router for navigation
+Tailwind CSS for styling
+Axios for API requests
+Project Structure
+Organize your project with these folders:
+
+src/components/ - Reusable components
+src/pages/ - Page components
+src/hooks/ - Custom React hooks
+src/context/ - Context providers
