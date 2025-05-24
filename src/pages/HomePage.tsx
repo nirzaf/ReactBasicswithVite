@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import CodeEditor from '../components/CodeEditor';
-import { ProgressContext } from '../context/ProgressContext';
+import { ProgressContext } from '../ProgressContext';
 
 const HomePage = () => {
   const { markTopicComplete } = useContext(ProgressContext);

@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import TopicHeader from '../components/TopicHeader';
 import CodeEditor from '../components/CodeEditor';
 import Quiz from '../components/Quiz';
-import { ProgressContext } from '../context/ProgressContext';
+import { ProgressContext } from '../ProgressContext';
 
 const ComponentsJSXPage = () => {
   const { markTopicComplete, updateQuizScore } = useContext(ProgressContext);
