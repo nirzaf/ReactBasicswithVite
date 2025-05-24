@@ -1,12 +1,13 @@
 import { useContext } from 'react';
 import CodeEditor from '../components/CodeEditor';
+import ProgressTracker from '../components/ProgressTracker';
 import { ProgressContext } from '../ProgressContext';
 
 const HomePage = () => {
   const { markTopicComplete } = useContext(ProgressContext);
 
   return (
-    <div>
+    <div className="space-y-8">
       <h1 className="text-4xl font-bold text-gray-800 mb-6">React Basics Tutorial</h1>
       <p className="text-xl text-gray-600 mb-8">
         Welcome to the React Basics Tutorial! This interactive web app will guide you through the fundamentals of React, 
@@ -28,6 +29,11 @@ const HomePage = () => {
         <p className="mt-2">
           Your progress will be tracked as you complete each section and quiz.
         </p>
+      </div>
+      
+      {/* Progress Tracker */}
+      <div className="md:hidden">
+        <ProgressTracker />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
